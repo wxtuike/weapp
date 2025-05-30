@@ -63,7 +63,10 @@ module.exports = {
 };
 ```
 
-5. 编译运行
+5. 修改微信开发者工具设置，如下图
+<img src="https://foruda.gitee.com/images/1748599650439564376/a1fb2b18_126105.png" height="500" />
+
+6. 编译运行
 
 #### 小程序页面展示
 <img src="https://foruda.gitee.com/images/1748597670474893522/19bdcb9b_126105.png" height="500" />&nbsp;
