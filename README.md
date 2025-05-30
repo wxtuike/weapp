@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="logo" src="https://foruda.gitee.com/avatar/1748600250044327169/15135660_xiaotuike_1748600249.png" width="120" style="margin-bottom: 10px;">
+  <img alt="logo" src="https://foruda.gitee.com/avatar/1748600250044327169/15135660_xiaotuike_1748600249.png" style="margin-bottom: 10px;">
 </p>
 <h3 align="center">轻量、可靠的微信推客小程序</h3>
 
