@@ -86,20 +86,20 @@ module.exports = {
 
 
 #### 官方相关文档
-《[微信小店联盟官方接口文档](https://developers.weixin.qq.com/doc/store/leagueheadsupplier/)》
-《[微信推客带货资料库](https://doc.weixin.qq.com/doc/w3_ATAAHwZ5AJc9IuP42XTS7yRqcATLf)》
-《[微信小程序开发指南](https://developers.weixin.qq.com/miniprogram/dev/framework/)》
+- 《[微信小店联盟官方接口文档](https://developers.weixin.qq.com/doc/store/leagueheadsupplier/)》
+- 《[微信推客带货资料库](https://doc.weixin.qq.com/doc/w3_ATAAHwZ5AJc9IuP42XTS7yRqcATLf)》
+- 《[微信小程序开发指南](https://developers.weixin.qq.com/miniprogram/dev/framework/)》
 
 ### 如何加入
-请发送申请邮件至13834563@qq.com
-添加微信：wander，备注“推客”,添加后拉您入群。
+- 请发送申请邮件至13834563@qq.com
+- 添加微信：wander，备注“推客”,添加后拉您入群。
 
 ![添加微信](https://foruda.gitee.com/images/1748587024440552091/b9d154a8_126105.png "微信二维码")
 
 
-### 联系
-wechat：wander
-邮箱：13834563@qq.com
+### 联系我
+- wechat：wander
+- 邮箱：13834563@qq.com
 
 
 
