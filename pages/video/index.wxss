@@ -1,0 +1,89 @@
+.bgimg {
+  width: 100vw;
+}
+
+.list {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f2f2f2;
+}
+
+.home-page-tabs {
+  width: 100%;
+  margin: 0 10rpx;
+  background-color: white;
+}
+
+.home-page-tabs {
+  --td-tab-nav-bg-color: transparent;
+  --td-tab-border-color: transparent;
+  --td-tab-item-color: #666;
+  --td-tab-track-color: #07c160;
+  --td-tab-item-active-color: #07c160;
+  --td-tab-font-size: 40rpx;
+}
+
+.home-page-tabs .tabs-external__item {
+  /* color: #666 !important; */
+  font-size: 28rpx;
+}
+
+.home-page-tabs .tabs-external__active {
+  color: #333333 !important;
+  font-size: 32rpx;
+}
+
+
+.home-page-tabs .t-tabs .t-tabs-nav {
+  background-color: transparent;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+}
+
+
+.video-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  width: 345rpx;
+  background: #FFFFFF;
+  border-radius: 10rpx;
+  margin: 20rpx 0 0 20rpx;
+  box-shadow: 1px 1px 10px 0px #ddd;
+}
+
+.item .video {
+  width: 345rpx;
+  height: 400rpx;
+  font-size: 12px;
+  background: #9A9A9A;
+  border-radius: 10rpx 10rpx 0rpx 0rpx;
+}
+
+.item .con {
+  padding: 24rpx;
+}
+
+.con .title {
+  font-size: 28rpx;
+}
+
+.con .price {
+  color: #FC335F;
+  font-size: 36rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.price .rmb {
+  font-size: 24rpx;
+}
+
+.con .commission {
+  font-size: 24rpx;
+  color: #FC335F;
+}

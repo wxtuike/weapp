@@ -1,0 +1,30 @@
+<nav-bar title="{{'商务合作'}}" background="{{navbar_background}}" color="{{'#ffffff'}}"></nav-bar>
+<view class="top">
+  <scroll-view class="list" padding="{{[8, 8, 8, 8]}}" type="list" scroll-y show-scrollbar="{{false}}" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}">
+    <view class="header">
+      <view class="txt">请选择您的合作角色</view>
+      <image class="img" src="https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SH/reserved/68235fb6000d6f01033610448934b00b000000a100004f50" mode="scaleToFill"></image>
+    </view>
+    <block wx:key="idx" wx:for-index="swIndex" wx:for-item="item" wx:for="{{list}}">
+      <view class="box" bindtap="show" data-item="{{item}}">
+        <view class="title">
+          <t-icon name="{{item.icon}}" size="40rpx" color="#07c160" />
+          <view class="ti">{{item.title}}</view>
+        </view>
+        <view class="con">
+          <text class="txt">{{item.content}}</text>
+          <view class="icon">
+            <t-icon name="chevron-right-circle" size="48rpx" />
+          </view>
+        </view>
+      </view>
+    </block>
+  </scroll-view>
+</view>
+<t-popup visible="{{visible}}" placement="center" bind:visible-change="onVisibleChange">
+  <view class="t-popup">
+    <view class="ptitle">{{ptitle}}</view>
+    <image class="qrimg" src="{{qrimg}}" mode="aspectFill" show-menu-by-longpress="{{true}}"></image>
+    <view class="ptxt">长按识别添加，咨询合作</view>
+  </view>
+</t-popup>

@@ -1,0 +1,51 @@
+<template name="skeleton">
+  <view class="sk-container">
+    <view is="components/nav-bar/index">
+      <view class="index--bar-bg" style="width:100vw;color:#ffffff;height: 82px;background-color:transparent;">
+        <view class="index--bar-title" style="top:48px;height: 32px;"></view>
+      </view>
+      <view class="index--bar-btn" style="top:48px;height: 32px;margin-left: 7px;">
+        <view class="index--back">
+          <view class="t-icon icon--t-icon  " style="font-size: 20px;">
+            <label class="t-icon-chevron-left icon--t-icon-chevron-left t-icon-base icon--t-icon-base sk-pseudo sk-pseudo-circle"></label>
+          </view>
+        </view>
+        <view class="index--line"></view>
+        <view class="index--home">
+          <view class="t-icon icon--t-icon  " style="font-size: 18px;">
+            <label class="t-icon-home icon--t-icon-home t-icon-base icon--t-icon-base sk-pseudo sk-pseudo-circle"></label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y="true" class="scroll" refresher-default-style="black" refresher-enabled="true" refresher-threshold="80" type="list" enable-back-to-top="true">
+      <view class="swiper">
+        <image class="simg sk-image"></image>
+      </view>
+      <view class="content">
+        <view class="price">
+          <view class="t sk-transparent sk-opacity"></view>
+          <view class="sk-transparent sk-text-14-2857-52 sk-text"></view>
+        </view>
+        <view class="title sk-transparent sk-text-14-2857-303 sk-text">
+        </view>
+      </view>
+      <view class="tips">
+        <view class="tip">
+          <text class="sk-transparent sk-text-14-2857-246 sk-text">提示</text>
+          <text class="txt sk-transparent sk-text-14-2857-646 sk-text">佣金以实际转链佣金为准</text>
+        </view>
+        <view class="tip">
+          <text class="sk-transparent sk-text-14-2857-193 sk-text">声明</text>
+          <text class="txt sk-transparent sk-text-14-2857-311 sk-text">商品销售者为购物链接所属店铺经营者，非本平台</text>
+        </view>
+      </view>
+      <view class="goods-pics">
+        <view class="title sk-transparent sk-text-14-2857-809 sk-text">商品详情</view>
+        <view class="touch-view">
+          <image class="img sk-image" data-index="0" data-type="detail" mode="widthFix" style="height: 656.162px;"></image>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</template>

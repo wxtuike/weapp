@@ -1,0 +1,10 @@
+<view class="splash-container">
+  <!-- <view class="jump-container">
+    <text>{{seconds}} s | 跳过</text>
+  </view> -->
+  <view class="image-container">
+    <image src="https://res.wx.qq.com/op_res/RBwYn_b7VGuWuLJ2qBChU5TS9E0E2WBIJqkwvK4DV_NdciupZQ58P62ReribRjp3Cn0uqFLZ6v4DC7719-YaeA" mode="" />
+    <view style="margin-top: 20rpx;">{{name}}，欢迎您！</view>
+    <view class="go" bind:tap="go">{{seconds}}秒后立即进入</view>
+  </view>
+</view>

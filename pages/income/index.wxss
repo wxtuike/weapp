@@ -1,0 +1,122 @@
+.top {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #07c160 0%, #ffffff 100%);
+}
+
+.list {
+  width: 100vw;
+  height: 100vh;
+}
+
+.header {
+  padding: 60rpx 20rpx 0 20rpx;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(180deg, #c7c7c7 0%, #ffffff 100%);
+  border-radius: 20rpx;
+}
+
+.header .t_cont {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 45rpx;
+  color: #42445D;
+  font-size: 22rpx;
+  align-items: center;
+}
+
+.t_cont .txt {
+  color: #162742;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+
+.header .c_cont {
+  display: flex;
+  justify-content: space-between;
+  margin: 36rpx 40rpx 26rpx 40rpx;
+  color: #42445D;
+  font-size: 22rpx;
+  align-items: center;
+}
+
+.c_cont .money {
+  font-size: 40rpx;
+  color: #FF7B5C;
+  font-weight: bold;
+}
+
+.c_cont .btn {
+  width: 116rpx;
+  line-height: 42rpx;
+  background: #07c160;
+  border-radius: 21rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: white;
+}
+
+.b_cont {
+  margin: 0 25rpx;
+  line-height: 40rpx;
+  background: #FFFFFF;
+  border-radius: 8rpx;
+  opacity: 0.4;
+  font-size: 20rpx;
+  color: #1C275B;
+  align-items: center;
+  padding-left: 18rpx;
+}
+
+.home-page-tabs {
+  margin-top: 8px;
+  background-color: white;
+}
+
+.home-page-tabs {
+  --td-tab-nav-bg-color: transparent;
+  --td-tab-border-color: transparent;
+  --td-tab-item-color: #666;
+  --td-tab-track-color: #07c160;
+  --td-tab-item-active-color: #07c160;
+  --td-tab-font-size: 14px;
+}
+
+.emt {
+  height: 100vh;
+  width: 100%;
+}
+
+.emt .empty {
+  color: black !important;
+}
+
+.data-list .ditem {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 8px 0;
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 30rpx 20rpx;
+  color: #333;
+  font-size: 14px;
+}
+
+.ditem .title {
+  font-weight: bold;
+}
+
+.title .status {
+  margin-left: 10rpx;
+  color: #ccc;
+  font-size: 22rpx;
+}
+
+.ditem .date {
+  margin-top: 20rpx;
+  font-size: 22rpx;
+  color: #999999;
+}

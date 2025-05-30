@@ -1,0 +1,66 @@
+.scroll-area {
+  height: 100vh;
+}
+
+.search {
+  background-color: #ffffff;
+  padding: 16rpx 32rpx;
+}
+
+.empty {
+  width: 100vw !important;
+}
+
+.good {
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 20rpx;
+  box-shadow: 1px 1px 5px 0px #999;
+  width: 354rpx;
+}
+
+.good-icon {
+  width: 354rpx;
+  height: 354rpx;
+}
+
+.goods-con {
+  padding: 0 5px;
+}
+
+.good-title {
+  width: 100%;
+  line-height: 1.4;
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.good-comment {
+  font-size: 12px;
+  color: #ccc;
+  padding-left: 5px;
+  margin-bottom: 10px;
+}
+
+.good .price {
+  color: red;
+  font-size: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.price .rmb {
+  font-size: 10px;
+}
+
+.commission_tip {
+  display: inline-block;
+  line-height: 30rpx;
+  background: #FDE3EA;
+  font-size: 12px;
+  color: #FC335F;
+  border-radius: 20rpx;
+  padding: 0 20rpx;
+  margin: 10rpx 0;
+}

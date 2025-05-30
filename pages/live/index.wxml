@@ -1,0 +1,49 @@
+<!-- 背景图 -->
+<image src="{{pageBg}}" class="bgimg" mode="widthFix"></image>
+<scroll-view class="list" worklet:onscrollupdate="scrolling" type="custom" scroll-y show-scrollbar="{{false}}" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}" bindscrolltolower="loadMore">
+  <view class="search">
+    <view class="search-icon-wrp">
+      <image class="search-icon" src="/images/search.png" />
+    </view>
+    <view class="search-text">输入达人昵称搜索</view>
+    <view class="search-btn">搜索</view>
+  </view>
+  <sticky-section push-pinned-header="{{false}}">
+    <sticky-header>
+      <view class="home-page-tabs">
+        <t-tabs t-class="t-tabs" t-class-active="tabs-external__active" t-class-item="tabs-external__item" defaultValue="{{0}}" space-evenly="{{false}}" bind:change="tabChangeHandle">
+          <t-tab-panel wx:for="{{tabList}}" wx:for-index="index" wx:key="index" label="{{item.text}}" value="{{item.key}}" />
+        </t-tabs>
+      </view>
+    </sticky-header>
+  </sticky-section>
+  <view class="con" wx:for="{{list}}" wx:key="id" data-item="{{item}}" bind:tap="go">
+    <view class="imgs">
+      <view class="thumb">
+        <block wx:if="{{item.type == '1'}}">
+          <view class="status">直播中</view>
+          <view class="ring"></view>
+          <image class="img start" src="{{item.thumb}}" mode="aspectFill"></image>
+        </block>
+        <block wx:else>
+          <view class="status1">预约中</view>
+          <image class="img" src="{{item.thumb}}" mode="aspectFill"></image>
+        </block>
+      </view>
+    </view>
+    <view class="content">
+      <view class="title">{{item.title}}</view>
+      <view class="box">
+        <text class="tips">最高返</text>
+        <text class="num">{{item.commission_rate}}</text>
+      </view>
+      <view class="box-con">
+        <text class="txt">{{item.invite_desc}}</text>
+        <view class="live-go">
+          <view class="go-txt">去推广</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view style="height: 500rpx;"></view>
+</scroll-view>

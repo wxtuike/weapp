@@ -1,0 +1,55 @@
+.swiper {
+  margin-top: 60rpx;
+  width: 100vw;
+  height: 100vh;
+}
+
+.img {
+  width: 550rpx;
+  height: 978rpx;
+  border-radius: 20rpx;
+}
+
+.qr {
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 800rpx;
+  left: 334rpx;
+}
+
+.avatar {
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 36rpx;
+  margin-right: 10rpx;
+}
+
+.user {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 806rpx;
+  left: 110rpx;
+  align-items: center;
+  font-size: 12px;
+}
+
+.user .name {
+  width: 140rpx;
+}
+
+.share {
+  width: 100vw;
+  position: absolute;
+  bottom: 250rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.share .txt {
+  padding: 20rpx 60rpx;
+  background-color: #07c160;
+  border-radius: 50rpx;
+  color: white;
+}

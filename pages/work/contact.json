@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "t-popup": "tdesign-miniprogram/popup/popup",
+    "nav-bar": "/components/nav-bar/index",
+    "t-icon": "tdesign-miniprogram/icon/icon"
+  }
+}

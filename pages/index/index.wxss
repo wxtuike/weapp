@@ -1,0 +1,51 @@
+.splash-container {
+  display: flex;
+  position: relative;
+}
+
+
+.jump-container {
+  height: 58rpx;
+  line-height: 58rpx;
+  background-color: #000;
+  border-radius: 29rpx;
+  text-align: center;
+  font-size: 12px;
+  top: 200rpx;
+  right: 20rpx;
+  color: white;
+  position: absolute;
+  z-index: 100;
+  padding: 0 20rpx;
+  opacity: 0.5;
+}
+
+.image-container {
+  display: flex;
+  width: 100vh;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #07c160;
+  color: white;
+}
+
+.image-container image {
+  width: 168rpx;
+  height: 168rpx;
+}
+
+.go {
+  margin-top: 200rpx;
+  width: 360rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #000;
+  border-radius: 40rpx;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  padding: 0 20rpx;
+  opacity: 0.5;
+}

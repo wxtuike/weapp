@@ -1,0 +1,41 @@
+<view class="pagecontent">
+  <t-sticky>
+    <t-tabs defaultValue="{{''}}" bind:change="onTabsChange" t-class="custom-tabs">
+      <t-tab-panel label="全部" value="" />
+      <t-tab-panel label="待返佣" value="0" />
+      <t-tab-panel label="已结算" value="1" />
+      <t-tab-panel label="已失效" value="2" />
+    </t-tabs>
+  </t-sticky>
+  <view class="list">
+    <view class="empty" wx:if="{{ list.length==0 }}">暂无数据</view>
+    <view class="item" wx:key="idx" wx:for-index="orderIndex" wx:for-item="item" wx:for="{{list}}">
+      <view class="order-sn">
+        <view>订单号：{{item.order_id}}</view>
+        <view>{{item.status_name}}</view>
+      </view>
+      <view class="order-con" bind:tap="goodsInfo" data-id="{{item.goods_id}}">
+        <view class="pic">
+          <image src="{{item.product_img}}" class="img" mode="aspectFill"></image>
+        </view>
+        <view class="con">
+          <view class="title ellipsis-1">{{item.product_title}}</view>
+          <view class="money">
+            <view class="price">
+              <view class="p">¥<text class="num">{{item.amount}}</text></view>
+              <view>支付金额</view>
+            </view>
+            <view class="line"></view>
+            <view class="price">
+              <view class="p">¥<text class="num">{{item.commission}}</text></view>
+              <view>预估收益</view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view>支付时间：<text class="gray">{{item.create_time}}</text></view>
+      <view class="source">来源：<text class="gray">{{item.talent_nickname}}</text></view>
+    </view>
+    <view style="height: 100rpx;"></view>
+  </view>
+</view>

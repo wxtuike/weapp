@@ -1,0 +1,14 @@
+{
+  "renderer": "webview",
+  "navigationBarBackgroundColor": "#07c160",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": "收益订单",
+  "navigationStyle": "default",
+  "enablePullDownRefresh": true,
+  "backgroundColor": "#eeeeee",
+  "usingComponents": {
+    "t-tabs": "tdesign-miniprogram/tabs/tabs",
+    "t-tab-panel": "tdesign-miniprogram/tab-panel/tab-panel",
+    "t-sticky": "tdesign-miniprogram/sticky/sticky"
+  }
+}

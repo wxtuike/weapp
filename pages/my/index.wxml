@@ -1,0 +1,110 @@
+<view class="top">
+  <view class="header">
+    <image class="avatar" mode="widthFix" src="{{user_info.head_img_url}}" />
+    <view class="header-right">
+      <view class="name">
+        <view>{{user_info.nickname}}</view>
+        <view wx:if="{{tk_bind}}" class="role">
+          <text class="rolename">{{user_info.role_name}}</text>
+        </view>
+        <view wx:else class="shouquan">
+          <label for="btnTuike" wx:if="{{mobile_bind}}">
+            <view>您还不是推客，立即授权</view>
+          </label>
+          <label for="btnMobile" wx:else>
+            <view>您还不是推客，立即授权</view>
+          </label>
+        </view>
+      </view>
+      <view class="ds" bind:tap="handlePopup">
+        <view class="btn">我的导师</view>
+      </view>
+    </view>
+  </view>
+  <double-tap-gesture-handler>
+    <scale-gesture-handler onGestureEvent="handleGesture">
+      <image src="{{new_img}}" class="circle" mode="widthFix" />
+    </scale-gesture-handler>
+  </double-tap-gesture-handler>
+  <scroll-view class="list" padding="{{[8, 8, 8, 8]}}" type="list" scroll-y show-scrollbar="{{false}}" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}">
+    <view class="con">
+      <view class="title commission">
+        <view class="name">我的收益</view>
+        <view class="tip">
+          <t-icon name="{{eye}}" size="32rpx" color="#bbb" bind:click="onEyeTap" />
+          <view class="right" bind:tap="withdraw">
+            <text>提现</text>
+            <t-icon name="chevron-right-s" color="#bbb" size="42rpx" />
+          </view>
+        </view>
+      </view>
+      <view class="profit_box">
+        <view class="profit_con">
+          <text class="p">{{commission.commission || 0}}</text>
+          <text class="p">可提现余额</text>
+        </view>
+        <view class="profit_con">
+          <text class="p">{{commission.total_commission || 0}}</text>
+          <text class="p">累计收益</text>
+        </view>
+        <view class="profit_con">
+          <text class="p">{{commission.wait_commission || 0}}</text>
+          <text class="p">待结算收益</text>
+        </view>
+      </view>
+    </view>
+    <view class="con1">
+      <t-grid class="t-grid" column="{{3}}">
+        <t-grid-item wx:for="{{service}}" wx:key="index" t-class-image="image" badge-props="{{item.badge}}" text="{{item.title}}" image="{{item.icon}}" jump-type="{{item.jump_type}}" url="{{item.url}}" />
+      </t-grid>
+    </view>
+    <view class="con">
+      <view class="title">我的服务</view>
+      <t-grid class="other" column="{{4}}">
+        <block wx:for="{{other}}" wx:key="index">
+          <block wx:if="{{item.label}}">
+            <label for="{{item.label}}">
+              <t-grid-item t-class-image="image" text="{{item.title}}" icon="{{item.icon}}" />
+            </label>
+          </block>
+          <block wx:else>
+            <t-grid-item t-class-image="image" text="{{item.title}}" icon="{{item.icon}}" bind:tap="other" data-item="{{item}}" />
+          </block>
+        </block>
+      </t-grid>
+    </view>
+  </scroll-view>
+</view>
+<t-popup visible="{{visible}}" bind:visible-change="onVisibleChange" placement="center">
+  <view class="p-popup">
+    <view class="pitem" wx:if="{{share.share.code}}">
+      <view class="ptitle">我的推荐人</view>
+      <view class="user">
+        <image class="avatar" src="{{share.share.head_img_url}}" mode="widthFix"></image>
+        <view>
+          <text>{{share.share.nickname}}</text>
+          <text>邀请码：{{share.share.code}}</text>
+        </view>
+      </view>
+    </view>
+    <view class="pitem" wx:if="{{share.service.code}}">
+      <view class="ptitle">推荐顾问</view>
+      <view class="tip">顾问将跟您一对一培训和解答问题</view>
+      <view class="user">
+        <image class="avatar" src="{{share.service.head_img_url}}" mode="widthFix"></image>
+        <view>
+          <text>{{share.service.nickname}}</text>
+          <view class="mobile">
+            <text>{{share.service.m_mobile}}</text>
+            <view class="bt" bind:tap="call" data-mobile="{{share.service.mobile}}">联系顾问</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</t-popup>
+<button id="btnContact" open-type="contact" session-from="member" style="display: none;"></button>
+<button id="btnSetting" open-type="openSetting" session-from="member" style="display: none;"></button>
+<button id="btnFeedback" open-type="feedback" session-from="member" style="display: none;"></button>
+<button id="btnMobile" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="display: none;"></button>
+<button id="btnTuike" bind:tap="bindTuike" style="display: none;"></button>

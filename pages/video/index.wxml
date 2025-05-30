@@ -1,0 +1,26 @@
+<!-- 背景图 -->
+<image src="{{pageBg}}" class="bgimg" mode="aspectFill"></image>
+<scroll-view class="list" type="custom" scroll-y show-scrollbar="{{false}}" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}" bindscrolltolower="loadMore">
+  <sticky-section push-pinned-header="{{false}}">
+    <sticky-header>
+      <view class="home-page-tabs">
+        <t-tabs t-class="t-tabs" t-class-active="tabs-external__active" t-class-item="tabs-external__item" defaultValue="{{0}}" space-evenly="{{false}}" bind:change="tabChangeHandle">
+          <t-tab-panel wx:for="{{tabList}}" wx:for-index="index" wx:key="index" label="{{item.text}}" value="{{item.key}}" />
+        </t-tabs>
+      </view>
+    </sticky-header>
+  </sticky-section>
+  <view class="video-list">
+    <view class="item" wx:key="idx" wx:for-index="index" wx:for-item="item" wx:for="{{list}}">
+      <view class="video" wx:if="{{item.feed_token != ''}}">
+        <channel-video class="video" feed-token="{{item.feed_token}}" promoterShareLink="{{item.promoter_share_link}}" object-fit="cover" />
+      </view>
+      <view class="con">
+        <text class="title ellipsis-2">{{item.title}}</text>
+        <view class="price"><text class="rmb">¥</text>{{item.price}}</view>
+        <view class="commission">分享每单赚￥{{item.commission}}</view>
+      </view>
+    </view>
+  </view>
+  <view style="height: 200rpx;"></view>
+</scroll-view>

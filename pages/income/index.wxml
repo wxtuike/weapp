@@ -1,0 +1,40 @@
+<nav-bar title="{{title}}" background="{{navbar_background}}" color="{{'#ffffff'}}"></nav-bar>
+<view class="top">
+  <scroll-view class="list" type="list" bindscroll="onscroll" padding="{{[0, 8, 8, 8]}}" scroll-y show-scrollbar="{{false}}" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}" bindscrolltolower="loadMore">
+    <view style="height: 180rpx;"></view>
+    <view class="header">
+      <view class="t_cont">
+        <view class="txt">可提现余额</view>
+      </view>
+      <view class="c_cont">
+        <text class="money">{{commission}}</text>
+        <view class="btn">提现</view>
+      </view>
+      <view class="b_cont">
+        每月16日后可提现上月已结算收益！
+      </view>
+    </view>
+    <view class="home-page-tabs">
+      <t-tabs defaultValue="{{0}}" bind:change="onTabsChange" t-class="custom-tabs">
+        <t-tab-panel label="结算记录" value="0" />
+        <t-tab-panel label="提现记录" value="1" />
+      </t-tabs>
+    </view>
+    <view class="data-list">
+      <view class="emt" wx:if="{{ list.length==0 }}">
+        <view class="empty">暂无数据</view>
+      </view>
+      <view class="ditem" wx:key="idx" wx:for-index="orderIndex" wx:for-item="item" wx:for="{{list}}">
+        <view>
+          <view class="title">
+            <text>{{item.title}}</text>
+            <text class="status" wx:if="item.status">{{item.status_text}}</text>
+          </view>
+          <view class="date">{{item.create_time}}</view>
+        </view>
+        <view class="money">{{item.money}}</view>
+      </view>
+    </view>
+    <view style="height: 100rpx;"></view>
+  </scroll-view>
+</view>

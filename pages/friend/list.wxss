@@ -1,0 +1,84 @@
+.top {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #07c160 0%, #ffffff 100%);
+}
+
+.header {
+  display: flex;
+  padding: 60rpx 40rpx;
+  justify-content: center;
+  background: linear-gradient(180deg, #c7c7c7 0%, #ffffff 100%);
+  border-radius: 20rpx;
+  margin: 0 20rpx;
+}
+
+.header .con {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: black;
+}
+
+.con .num {
+  font-size: 20px;
+  font-weight: bolder;
+  color: #FF7B5C;
+  margin-bottom: 20rpx;
+}
+
+.header .line {
+  width: 100rpx;
+}
+
+.list {
+  height: 100vh;
+  background-color: white;
+  margin: 20rpx 20rpx;
+  padding: 30rpx;
+  border-radius: 20rpx;
+}
+
+.title {
+  margin-bottom: 20rpx;
+}
+
+.item {
+  display: flex;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.item .img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+  margin-right: 20rpx;
+}
+
+.item .user {
+  margin-top: 20rpx;
+  font-size: 12px;
+  color: #888;
+}
+
+.user .name {
+  font-size: 14px;
+  color: black;
+  font-weight: bolder;
+}
+
+.user .code {
+  margin: 4rpx 0;
+}
+
+.user .role {
+  font-size: 10px;
+  font-weight: lighter;
+  margin-left: 20rpx;
+  padding: 0 20rpx;
+  border-radius: 20rpx;
+  border: 1px solid #ccc;
+}

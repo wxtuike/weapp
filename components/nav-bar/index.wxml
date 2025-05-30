@@ -1,0 +1,12 @@
+<view class="bar-bg" style="width:100vw;color:{{color}};height: {{bgHeight}}px;background-color:{{background||'transparent'}};">
+  <view class="bar-title" style="top:{{barTop}}px;height: {{barHeight}}px;">{{title}}</view>
+</view>
+<view class="bar-btn" style="top:{{barTop}}px;height: {{barHeight}}px;margin-left: {{barLeft}}px;">
+  <view class="back" bindtap="back">
+    <t-icon name="chevron-left" size="20px" />
+  </view>
+  <view class="line"></view>
+  <view class="home" bindtap="goHome">
+    <t-icon name="home" size="18px" />
+  </view>
+</view>

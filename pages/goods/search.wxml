@@ -1,0 +1,33 @@
+<navigation-bar title="搜索"></navigation-bar>
+<scroll-view class="scroll-area" type="custom" enable-back-to-top="{{true}}" scroll-y show-scrollbar="{{false}}" worklet:onscrollupdate="handleScrollUpdate" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}" bindscrolltolower="loadMore" scroll-top="{{scrollTop}}">
+  <sticky-section push-pinned-header="{{false}}">
+    <sticky-header>
+      <view class="search">
+        <t-search value="{{value}}" center placeholder="搜索商品" action="{{actionText}}" bind:blur="blurHandle" bind:focus="focusHandle" bind:action-click="actionHandle" bind:change="changeHandle" bind:submit="submit" />
+      </view>
+    </sticky-header>
+  </sticky-section>
+  <grid-view padding="{{[6, 6, 6, 6]}}" cross-axis-gap="6" main-axis-gap="6" cross-axis-count="2" type="masonry" class="goods">
+    <block wx:if="{{list.length>0}}">
+      <block wx:for="{{list}}" wx:key="id">
+        <view class="good" bind:tap="detail" data-item="{{item}}">
+          <image mode="widthFix" class="good-icon" fade-in src="{{item.thumb}}" />
+          <view class="goods-con">
+            <view class="good-title">
+              <text max-lines="{{2}}" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{item.title}}</text>
+            </view>
+            <view class="price">
+              <span class="rmb">¥</span>
+              <span>{{item.price}}</span>
+            </view>
+            <text class="commission_tip">{{item.commission_tip}}</text>
+          </view>
+        </view>
+      </block>
+    </block>
+    <block wx:else>
+      <view class="empty">暂无数据</view>
+    </block>
+  </grid-view>
+  <view style="height: 400rpx;"></view>
+</scroll-view>

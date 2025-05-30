@@ -1,0 +1,15 @@
+{
+  "renderer": "webview",
+  "navigationStyle": "default",
+  "navigationBarTitleText": "直播详情",
+  "backgroundColor": "#ffdd94",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "painter": "/components/painter/painter",
+    "webp-image": "/components/webp-image/index",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "t-steps": "tdesign-miniprogram/steps/steps",
+    "t-step-item": "tdesign-miniprogram/step-item/step-item",
+    "t-popup": "tdesign-miniprogram/popup/popup"
+  }
+}

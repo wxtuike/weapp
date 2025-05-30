@@ -1,0 +1,97 @@
+<painter palette="{{canvas_data}}" use2D style="display: none;" bind:imgOK="onImgOK" />
+<view class="top">
+  <view style="height: 10rpx;"></view>
+  <view class="header">
+    <view class="imgs">
+      <view class="thumb">
+        <block wx:if="{{live.type == '1'}}">
+          <view class="status">直播中</view>
+          <view class="ring"></view>
+          <image class="img start" src="{{live.thumb}}" mode="aspectFill"></image>
+        </block>
+        <block wx:else>
+          <view class="status1">预约中</view>
+          <image class="img" src="{{live.thumb}}" mode="aspectFill"></image>
+        </block>
+      </view>
+    </view>
+    <view class="content">
+      <view class="title">{{live.title}}</view>
+      <view class="box">
+        <text class="tips">最高返</text>
+        <text class="num">{{live.commission_rate}}</text>
+      </view>
+      <view class="txt">{{live.invite_desc}}</view>
+    </view>
+  </view>
+  <view class="start_time" wx:if="{{live.start_time !=''}}">{{live.start_time}}</view>
+  <view class="fuli">
+    <view class="title">
+      <view class="left">直播间文案</view>
+      <view class="right" bind:tap="copy">复制文案</view>
+    </view>
+    <view class="con">
+      <view wx:for="{{live.share}}" wx:for-index="index" wx:key="index">{{item}}</view>
+    </view>
+  </view>
+  <view class="channel" wx:if="{{live.goods_list.length>0}}">
+    <view class="title">直播间爆品预告</view>
+    <view class="con">
+      <scroll-view scroll-x="true" class="img-scroll">
+        <view class="products">
+          <view class="product" wx:key="index" wx:for="{{live.goods_list}}" data-index="{{index}}">
+            <image src="{{item.thumb}}" fit="cover" class="img"></image>
+            <view class="content">
+              <view class="ellipsis-2">{{item.title}}</view>
+              <view class="price"><text class="t">¥</text>{{item.price}}</view>
+              <view class="commision" wx:if="{{item.share_commission != ''}}">预估返{{item.share_commission}}</view>
+            </view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="channel">
+    <view class="title">推广教程</view>
+    <view class="con">
+      <t-steps layout="vertical">
+        <t-step-item wx:for="{{steps}}" wx:key="index" title="{{item}}" />
+      </t-steps>
+    </view>
+  </view>
+  <image src="{{canvas_image}}" style="width: 100vw;" mode="widthFix"></image>
+  <view style="height: 300rpx;"></view>
+</view>
+<view class="bar">
+  <view class="con" wx:if="{{live.type == '1'}}">
+    <view class="share" bind:tap="share">分享海报</view>
+    <view class="go" bind:tap="buy" wx:if="{{is_bind_wxtk != 1}}">去直播间</view>
+    <view class="go" wx:else>去直播间
+      <view class="go-live">
+        <channel-live class="channel-live" feed-id="{{live.live_id}}" promoterShareLink="{{live.promoter_share_link}}" />
+      </view>
+    </view>
+  </view>
+  <view class="con" wx:else>
+    <view class="share start" bind:tap="share">分享预约海报</view>
+  </view>
+</view>
+<button id="btnMobile" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="display: none;"></button>
+<button id="btnTuike" bind:tap="bindTuike" style="display: none;"></button>
+<t-popup visible="{{visible}}" placement="center" bind:visible-change="onVisibleChange" close-btn>
+  <view class="bind-popup">
+    <view class="bind-title">授权</view>
+    <block wx:if="{{is_bind_wxtk == -1}}">
+      <text class="gray">您还没有绑定推客，绑定推客前需要获取您的手机号，点确认立即授权</text>
+      <label for="btnMobile">
+        <view class="bind-btn">确认</view>
+      </label>
+    </block>
+    <block wx:if="{{is_bind_wxtk == 0}}">
+      <text class="gray">您还没有绑定推客，点确认立即绑定</text>
+      <label for="btnTuike">
+        <view class="bind-btn">确认</view>
+      </label>
+    </block>
+  </view>
+</t-popup>

@@ -1,0 +1,95 @@
+.pagecontent {
+  background-color: #eee;
+}
+
+.custom-tabs {
+  --td-tab-item-color: #666;
+  --td-tab-track-color: #07c160;
+  --td-tab-item-active-color: #07c160;
+}
+
+.list {
+  min-height: 100vh;
+  background-color: #eee;
+}
+
+.item {
+  margin: 8px;
+  background-color: white;
+  border-radius: 20rpx;
+  padding: 20rpx;
+  color: #333;
+  font-size: 12px;
+}
+
+.item .order-sn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order-con {
+  margin: 10rpx 0;
+  display: flex;
+}
+
+.order-con .pic {
+  width: 200rpx;
+  margin-right: 20rpx;
+}
+
+.pic .img {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 20rpx;
+}
+
+.order-con .con {
+  height: 150rpx;
+}
+
+.order-con .con .title {
+  font-size: 14px;
+  font-weight: bolder;
+}
+
+.con .money {
+  display: flex;
+  border-radius: 10rpx;
+  border: 1px solid #eee;
+  margin: 10rpx 0;
+  padding: 10rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.money .price {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100rpx;
+  align-items: center;
+}
+
+.price .p {
+  color: #FC335F;
+  font-size: 10px;
+}
+
+.price .p .num {
+  font-size: 14px;
+}
+
+.con .line {
+  margin: 0 40rpx;
+  width: 1px;
+  height: 30rpx;
+  background-color: #eee;
+}
+
+.source {
+  margin: 10rpx 0;
+}
+
+.gray {
+  color: #999;
+}

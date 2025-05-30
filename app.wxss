@@ -1,0 +1,39 @@
+page {
+  --primary-color: #07c160
+}
+
+.ellipsis-1,
+.ellipsis-2,
+.ellipsis-3 {
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal !important;
+  word-wrap: break-word;
+  -webkit-flex-shrink: inherit !important;
+  flex-shrink: inherit !important;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+}
+
+.ellipsis-1 {
+  -webkit-line-clamp: 1;
+}
+
+.ellipsis-2 {
+  -webkit-line-clamp: 2;
+}
+
+.ellipsis-3 {
+  -webkit-line-clamp: 3;
+}
+
+.empty {
+  display: flex;
+  width: 100%;
+  padding: 200rpx 0;
+  justify-content: center;
+  color: rgb(179, 179, 179);
+  font-size: 14px;
+}

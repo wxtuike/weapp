@@ -1,0 +1,251 @@
+page {
+  background-color: #ffffff;
+}
+
+.top {
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #07c160 0%, #ffffff 100%);
+  /* background: url("https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SH/reserved/682697c1000c24951bcd0850e882bc1e000000a100004f50") no-repeat 50% 50%;
+  background-size: cover; */
+}
+
+.header-right .name {
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  padding: 200rpx 20rpx 50rpx 20rpx;
+  display: flex;
+  flex-direction: row;
+}
+
+.header .avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 75rpx;
+}
+
+.header-right {
+  width: 100%;
+  margin-left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header-right .ds {
+  margin-top: 30rpx;
+}
+
+.ds .btn {
+  color: white;
+  background: linear-gradient(180deg, #ff5607 0%, #f79618 100%);
+  padding: 4rpx 30rpx;
+  border-radius: 50rpx;
+  font-size: 12px;
+  animation: heartbeat 2s infinite ease-out;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.list {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+}
+
+.con {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx 30rpx 40rpx 30rpx;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 1px 1px 10px 0px #ddd;
+}
+
+.con1 {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 20rpx 0 40rpx 0;
+  border-radius: 20rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 1px 1px 10px 0px #ddd;
+}
+
+
+.con .title {
+  font-size: 16px;
+  height: 60rpx;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.commission {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+}
+
+.commission .name {
+  width: 180rpx;
+}
+
+.commission .tip {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #666666;
+}
+
+.tip .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.con .profit_box {
+  display: flex;
+  background: white;
+  padding-top: 40rpx;
+  box-sizing: border-box;
+}
+
+.profit_box .profit_con {
+  flex: 1;
+}
+
+.profit_box .profit_con .p {
+  text-align: center;
+  display: block;
+}
+
+.profit_box .profit_con .p:first-child {
+  color: #000;
+  font-size: 34rpx;
+  font-weight: bold;
+}
+
+.profit_box .profit_con .p:last-child {
+  font-size: 28rpx;
+  color: #848484;
+}
+
+.t-grid .image {
+  width: 80rpx !important;
+  height: 80rpx !important;
+}
+
+.other {
+  color: #666666 !important;
+}
+
+.other .t-grid-item__text {
+  padding-top: 0 !important;
+}
+
+.other .t-grid-item__image--icon {
+  background-color: white !important;
+}
+
+.other .t-grid-item__content {
+  padding-top: 10rpx !important;
+}
+
+
+.p-popup {
+  background: linear-gradient(180deg, #07c160 0%, #ffffff 100%);
+  width: 600rpx;
+  border-radius: 20rpx;
+  display: flex;
+  padding: 30rpx;
+  flex-direction: column;
+}
+
+.pitem {
+  margin-top: 20rpx;
+}
+
+.pitem .user {
+  margin: 30rpx 0;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  align-items: center;
+}
+
+.pitem .tip {
+  font-size: 12px;
+  color: #333;
+}
+
+.pitem .mobile {
+  display: flex;
+  flex-direction: row;
+}
+
+.mobile .bt {
+  margin-left: 10rpx;
+  font-size: 10px;
+  padding: 0 20rpx;
+  background-color: red;
+  color: white;
+  border-radius: 20rpx;
+}
+
+.pitem .avatar {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin-right: 10rpx;
+}
+
+
+.circle {
+  width: 160rpx;
+  height: 144rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 55%;
+  right: 0;
+  z-index: 10000;
+}
+
+.role {
+  display: flex;
+}
+
+.rolename {
+  font-size: 12px;
+  border-radius: 20rpx;
+  border: 1px solid #ccc;
+  padding: 0 30rpx;
+  background: linear-gradient(180deg, #9c9c9c 0%, #eeeeee 100%);
+  color: #000;
+}
+
+.shouquan {
+  font-size: 12px;
+}

@@ -1,0 +1,10 @@
+{
+  "renderer": "webview",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "painter": "/components/painter/painter",
+    "t-icon": "tdesign-miniprogram/icon/icon",
+    "nav-bar": "/components/nav-bar/index",
+    "t-popup": "tdesign-miniprogram/popup/popup"
+  }
+}

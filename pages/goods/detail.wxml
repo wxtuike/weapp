@@ -1,0 +1,91 @@
+<import src="detail.skeleton.wxml" />
+<template is="skeleton" wx:if="{{loading}}" />
+<block wx:else="">
+  <painter palette="{{canvas_data}}" use2D bind:imgOK="onImgOK" style="display: none;" />
+  <painter palette="{{share_data}}" use2D bind:imgOK="onShareImgOK" style="display: none;" />
+  <nav-bar title="{{title}}" background="{{navbar_background}}" color="{{'#ffffff'}}"></nav-bar>
+  <scroll-view class="scroll" bindscroll="onscroll" type="list" scroll-y show-scrollbar="{{false}}" refresher-enabled="{{true}}" refresher-threshold="{{80}}" refresher-default-style="black" bind:refresherrefresh="onRefresh" refresher-triggered="{{triggered}}">
+    <swiper class="swiper" bindchange="swiperChange" indicator-dots="{{goods_info.head_imgs.length>1}}" indicator-active-color="#202020" indicator-color="#d0cdd1">
+      <block wx:key="index" wx:for="{{goods_info.head_imgs}}">
+        <swiper-item data-index="{{index}}" data-type="pics" bindtap="previewImage">
+          <image src="{{item}}" fit="cover" class="simg"></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="content">
+      <view class="price">
+        <view class="t">¥</view>
+        <view>{{goods_info.price}}</view>
+      </view>
+      <view class="title">
+        {{goods_info.title}}
+      </view>
+    </view>
+    <view class="tips">
+      <view class="tip">
+        <text>提示</text>
+        <text class="txt">佣金以实际转链佣金为准</text>
+      </view>
+      <view class="tip">
+        <text>声明</text>
+        <text class="txt">商品销售者为购物链接所属店铺经营者，非本平台</text>
+      </view>
+    </view>
+    <view class="goods-pics">
+      <view class="title">商品详情</view>
+      <view class="touch-view">
+        <!-- <image src="{{canvas_image}}" style="width: 750rpx;" mode="widthFix"></image> -->
+        <!-- <image src="{{share_image}}" style="width: 750rpx;" mode="widthFix"></image> -->
+        <image class="img" mode="widthFix" wx:key="index" wx:for="{{goods_info.desc_imgs}}" data-index="{{index}}" data-type="detail" bindtap="previewImage" src="{{item}}">
+        </image>
+      </view>
+    </view>
+    <view style="height: 200rpx;"></view>
+  </scroll-view>
+  <view class="bar">
+    <view class="co">
+      <view class="left" bind:tap="goHome">
+        <t-icon name="home" size="50rpx" color="#666" />
+        <text>首页</text>
+      </view>
+      <view class="right">
+        <view class="share" bind:tap="share">
+          <view>¥{{goods_info.commission}}</view>
+          <view>分享每单赚</view>
+        </view>
+        <view class="buy1" wx:if="{{is_bind_wxtk == 1}}">
+          <view>¥{{goods_info.commission}}</view>
+          <view>购买每单返</view>
+          <view class="buy-store">
+            <store-product class="store-product" appid="{{store_product.shop_appid}}" product-id="{{store_product.product_id}}" product-promotion-link="{{store_product.product_promotion_link}}" custom-content="{{true}}">
+              <view>立即购买</view>
+            </store-product>
+          </view>
+        </view>
+        <view class="buy" wx:else bind:tap="buy">
+          <view>{{goods_info.commission}}</view>
+          <view>购买每单返</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</block>
+<button id="btnMobile" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="display: none;"></button>
+<button id="btnTuike" bind:tap="bindTuike" style="display: none;"></button>
+<t-popup visible="{{visible}}" placement="center" bind:visible-change="onVisibleChange" close-btn>
+  <view class="bind-popup">
+    <view class="bind-title">授权</view>
+    <block wx:if="{{is_bind_wxtk == -1}}">
+      <text class="gray">您还没有绑定推客，绑定推客前需要获取您的手机号，点确认立即授权</text>
+      <label for="btnMobile">
+        <view class="bind-btn">确认</view>
+      </label>
+    </block>
+    <block wx:if="{{is_bind_wxtk == 0}}">
+      <text class="gray">您还没有绑定推客，点确认立即绑定</text>
+      <label for="btnTuike">
+        <view class="bind-btn">确认</view>
+      </label>
+    </block>
+  </view>
+</t-popup>

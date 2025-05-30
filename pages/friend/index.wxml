@@ -1,0 +1,23 @@
+<navigation-bar title="分享海报"></navigation-bar>
+<view class="page-body">
+  <swiper class="swiper" bindchange="onSwiperChange" circular layout-type="transformer" transformer-type="scaleAndFade" previous-margin="50rpx" next-margin="50rpx">
+    <block wx:key="idx" wx:for-index="swIndex" wx:for-item="item" wx:for="{{list}}">
+      <swiper-item>
+        <snapshot id="view{{swIndex}}">
+          <image mode='widthFix' class="img" src="{{item.url}}" bind:tap="show" data-index="{{swIndex}}" />
+          <view class="user">
+            <image class="avatar" src="{{user.head_img_url}}" mode="aspectFill"></image>
+            <view>
+              <text class="name" max-lines="1">{{user.nickname}}</text>
+              <view class="code">{{user.code}}</view>
+            </view>
+          </view>
+          <image class="qr" mode="aspectFill" src="{{qr}}"></image>
+        </snapshot>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="share">
+  <view bind:tap="tapShare" class="txt">分享海报</view>
+</view>

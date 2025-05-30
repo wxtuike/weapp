@@ -1,0 +1,70 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/home/home",
+    "pages/video/index",
+    "pages/live/index",
+    "pages/my/index",
+    "pages/goods/detail",
+    "pages/live/detail",
+    "pages/work/contact",
+    "pages/income/order",
+    "pages/income/index",
+    "pages/friend/list",
+    "pages/friend/index",
+    "pages/goods/search"
+  ],
+  "tabBar": {
+    "custom": false,
+    "color": "#1c1b20",
+    "selectedColor": "#2aa515",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/tabbar/home.png",
+        "selectedIconPath": "images/tabbar/home_fill.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/live/index",
+        "iconPath": "images/tabbar/record.png",
+        "selectedIconPath": "images/tabbar/record_fill.png",
+        "text": "直播"
+      },
+      {
+        "pagePath": "pages/video/index",
+        "iconPath": "images/tabbar/video.png",
+        "selectedIconPath": "images/tabbar/video_fill.png",
+        "text": "短视频"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "iconPath": "images/tabbar/my.png",
+        "selectedIconPath": "images/tabbar/my_fill.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Weixin"
+  },
+  "renderer": "skyline",
+  "rendererOptions": {
+    "skyline": {
+      "defaultDisplayBlock": true,
+      "defaultContentBox": true,
+      "disableABTest": true,
+      "sdkVersionBegin": "3.0.0",
+      "sdkVersionEnd": "15.255.255"
+    }
+  },
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
