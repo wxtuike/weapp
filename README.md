@@ -1,4 +1,8 @@
-# 微信推客程序-小程序端
+<p align="center">
+  <img alt="logo" src="https://foruda.gitee.com/avatar/1748589294764011609/15135660_xiaotuike_1748589294.png!avatar100" width="120" style="margin-bottom: 10px;">
+</p>
+<h3 align="center">轻量、可靠的微信推客小程序</h3>
+
 
 #### 介绍
 微信小店推客程序【小程序端】
