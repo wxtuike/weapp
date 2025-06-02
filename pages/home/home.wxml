@@ -2,7 +2,7 @@
   <view class="top">
     <view class="nav-bar" style="padding-top: {{paddingTop}}px;">
       <view class="nav">
-        <image class="nav-logo" mode="aspectFill" src="https://res.wx.qq.com/op_res/RBwYn_b7VGuWuLJ2qBChU5TS9E0E2WBIJqkwvK4DV_NdciupZQ58P62ReribRjp3Cn0uqFLZ6v4DC7719-YaeA" />
+        <image class="nav-logo" mode="aspectFill" src="https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SH/reserved/683d594f0000a2a90f888a59b5ee1715000000a100004f50"/>
         <view class="nav-title">
           <text>小推客 <text class="title">慧选南山，集心甄选</text></text>
         </view>
