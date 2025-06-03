@@ -76,7 +76,7 @@ module.exports = {
 6. 小程序管理后台设置
 -  [小程序管理后台](https://mp.weixin.qq.com/) -> 管理 -> 开发管理 -> 服务器域名 -> request合法域名
 -  [小程序管理后台](https://mp.weixin.qq.com/) -> 管理 -> 开发管理 -> downloadFile合法域名
-
+域名如下：
 ```
 https://store.mp.video.tencent-cloud.com
 https://wst.wxapp.tc.qq.com
@@ -84,8 +84,7 @@ https://wx.qlogo.cn
 http://mmbiz.qpic.cn
 https://res.wx.qq.com
 ```
-
-1. 编译运行
+7. 编译运行
 
 #### 小程序页面展示
 <img src="https://foruda.gitee.com/images/1748918087296228705/de9cfb9c_126105.jpeg" height="500" />&nbsp;
