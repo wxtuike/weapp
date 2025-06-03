@@ -3,7 +3,7 @@
     <text>{{seconds}} s | 跳过</text>
   </view> -->
   <view class="image-container">
-    <image src="https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SH/reserved/683d5820000636bf2fb56add72f71715000000a100004f50" mode="" />
+    <image src="https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SH/reserved/683d594f0000a2a90f888a59b5ee1715000000a100004f50" mode="" />
     <view style="margin-top: 20rpx;">{{name}}，欢迎您！</view>
     <view class="go" bind:tap="go">{{seconds}}秒后立即进入</view>
   </view>
