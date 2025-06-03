@@ -67,17 +67,24 @@ module.exports = {
 
 <img src="https://foruda.gitee.com/images/1748599650439564376/a1fb2b18_126105.png" height="500" />
 
-6. 编译运行
+6. 小程序管理后台设置
+-  [小程序管理后台](https://mp.weixin.qq.com/) -> 管理 -> 开发管理 -> 服务器域名 -> request合法域名
+-  [小程序管理后台](https://mp.weixin.qq.com/) -> 管理 -> 开发管理 -> downloadFile合法域名
+
+```
+https://store.mp.video.tencent-cloud.com
+https://wst.wxapp.tc.qq.com
+https://wx.qlogo.cn
+http://mmbiz.qpic.cn
+https://res.wx.qq.com
+```
+
+1. 编译运行
 
 #### 小程序页面展示
-<img src="https://foruda.gitee.com/images/1748597670474893522/19bdcb9b_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597698893814196/c07e5627_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597713385335896/1460da00_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597726838211860/d6b41722_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597740371512288/ed924599_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597753360162773/cfbc96e3_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597767198501795/0c06c22c_126105.png" height="500" />&nbsp;
-<img src="https://foruda.gitee.com/images/1748597780094221557/ec0c6052_126105.png" height="500" />&nbsp;
+<img src="https://foruda.gitee.com/images/1748918087296228705/de9cfb9c_126105.jpeg" height="500" />&nbsp;
+<img src="https://foruda.gitee.com/images/1748918175084783188/67dee5ac_126105.jpeg" height="500" />&nbsp;
+<img src="https://foruda.gitee.com/images/1748918206114189923/2e8b02fc_126105.jpeg" height="500" />&nbsp;
 
 
 
