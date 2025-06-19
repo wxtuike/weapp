@@ -45,6 +45,9 @@ const request = (url, data = {}, method = 'GET', showLoading = false) => {
             reject(new Error(res.data.info))
           }
         } else {
+          if (res.statusCode == 203) {
+            wx.removeStorageSync('token')
+          }
           reject(new Error('请求失败，状态码：' + res.statusCode))
         }
       },
