@@ -73,7 +73,8 @@
 }
 
 .touch-view .img {
-  width: 750rpx;
+  width: 100vw;
+  display: block;
 }
 
 
