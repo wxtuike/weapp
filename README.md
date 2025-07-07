@@ -42,6 +42,7 @@
 3. 小程序 AppID
 4. [微信推客联盟机构](https://channels.weixin.qq.com/ec-mcn/auth/login)注册并交纳保证金
 5. 微信推客联盟机构 AppId
+6. 到deepseek开放平台申请deepseek API keys并充值,[deepseek开放平台](https://platform.deepseek.com/)
 
 #### 安装步骤
 1. 部署微信推客程序服务端
@@ -66,6 +67,7 @@ git clone https://gitee.com/xiaotuike/tuike-weapp.git
 module.exports = {
   appid: 'wxcf3e5e4ce600000', //您申请的推客机构的appid
   apiUrl: 'https://tuike.qq.cn',//第一步部署的微信推客程序服务端域名
+  deepseek_key: 'sk-00000', //请填写您的deepseek key
 };
 ```
 可以用我已经配置好的服务端：https://tuike.rlma.cn，因为每个小程序的appid不同这个登录会失败，但是首页、商品页、直播页这些不涉及登录的页面可以正常显示。
