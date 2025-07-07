@@ -2,6 +2,10 @@ import {
   api,
   wxtkBind
 } from '../../utils/api'
+import {
+  deepseek_key
+} from '../../project.config'
+
 const app = getApp()
 Page({
   /**
@@ -19,7 +23,13 @@ Page({
     share_data: {},
     share_image: '',
     loading: true,
-    visible: false
+    visible: false,
+    wenan: '',
+    wenan_btn: '生成文案',
+    copy_show: false,
+    wa_index: 0,
+    wa: '',
+    start: false,
   },
 
   /**
@@ -42,6 +52,7 @@ Page({
     if (res.code == 200) {
       this.setData({
         id: data.goods_info.goods_id,
+        gid: data.goods_info.id,
         goods_info: data.goods_info,
         store_product: data.store_product,
         loading: false,
@@ -339,6 +350,152 @@ Page({
     }
     this.setData({
       canvas_data: data
+    })
+  },
+  /** 以打字机形式逐字显示文案 */
+  printText(text) {
+    let index = 0;
+    this.setData({
+      wenan: ''
+    })
+    this.data.timer = setInterval(() => {
+      if (index < text.length) {
+        this.setData({
+          wenan: this.data.wenan + text[index]
+        });
+        index++;
+      } else {
+        clearInterval(this.data.timer)
+        let wenan = this.data.wenan + '\n' + this.data.store_product.short_link
+        this.setData({
+          wenan_btn: '重新生成文案',
+          copy_show: true,
+          start: false,
+          wenan
+        })
+      }
+    }, 100);
+  },
+  deepseek() {
+    let start = this.data.start
+    console.log(start)
+    if (start) {
+      return true
+    }
+    this.setData({
+      start: true,
+      copy_show: false,
+      wenan_btn: '正在生成文案...',
+    })
+    this.getAi()
+  },
+
+  getDeepseek() {
+    let that = this
+    that.setData({
+      wenan: '文案生成中...',
+      wenan_btn: '正在生成文案...',
+      copy_show: false,
+    })
+    // this.printText(wenan)
+    // return true
+
+    let title = this.data.goods_info.title + '，价格：' + this.data.goods_info.price
+    console.log(title)
+    const requestTask = wx.request({
+      url: 'https://api.deepseek.com/chat/completions',
+      method: 'POST',
+      header: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + deepseek_key
+      },
+      data: {
+        messages: [{
+            content: "你是一个商品文案编写专家，善于根据商品的基本信息，为用户生成一个最合适的商品爆款推广文案。要求只返回推广文案，不要写与商品无关的描述，多用感叹号和emoji表情，字数不超过100字。",
+            role: "system"
+          },
+          {
+            content: title,
+            role: "user"
+          }
+        ],
+        model: "deepseek-chat",
+        stream: true
+      },
+      enableChunked: true, //开启transfer-encoding chunked
+    })
+    requestTask.onChunkReceived(res => {
+      //在微信开发者工具和真机上接收到的对象格式是不同的，以下代码是针对不同格式进行解码处理
+      let type = Object.prototype.toString.call(res.data);
+      let text;
+      if (type === "[object Uint8Array]")
+        text = decodeURIComponent(escape(String.fromCharCode(...res.data)))
+      if (type === "[object ArrayBuffer]") {
+        let uint8Array = new Uint8Array(res.data);
+        text = decodeURIComponent(escape(String.fromCharCode(...uint8Array)))
+      }
+      //将解码后的文本分割成字符串数组，数组中的每个元素就是即时接收到的流式文本
+      let list = text.split('\n');
+      for (var i = 0; i < list.length; i++) {
+        if (list[i]) {
+          if (list[i].trim().search(/^data.*\}$/) > -1) { //过滤掉空行和其他不规则数据行
+            let delta = JSON.parse(list[i].substring(6)).choices[0].delta;
+            //如果开启了“深度思考”，返回的对象中delta.reasoning_content为深度思考内容，
+            //delta.content为主体应答内容
+            let content = delta.reasoning_content ? delta.reasoning_content : delta.content;
+            console.log(content)
+            if (content == '。') {
+              // content += '\n'
+            }
+            let wenan = that.data.wenan
+            if (wenan == '文案生成中...') {
+              wenan = ''
+            }
+            wenan = wenan + content
+            that.setData({
+              wenan
+            })
+          }
+          if (list[i] == 'data: [DONE]') {
+            that.saveAi(that.data.wenan)
+            let wenan = that.data.wenan + '\n' + that.data.store_product.short_link
+            that.setData({
+              wenan,
+              wenan_btn: '重新生成文案',
+              copy_show: true,
+              start: false
+            })
+            requestTask.abort()
+          }
+        }
+      }
+    })
+  },
+  async saveAi(content) {
+    let id = this.data.gid
+    let res = await api.post('/index/goods/saveAi', {
+      id,
+      content
+    })
+    console.log(res)
+  },
+  async getAi() {
+    let id = this.data.gid
+    let res = await api.post('/index/goods/getAi', {
+      id
+    })
+    if (res.data.length < 5) {
+      this.getDeepseek()
+    } else {
+      let randomIndex = Math.floor(Math.random() * res.data.length)
+      let wenan = res.data[randomIndex].content
+      console.log(wenan)
+      this.printText(wenan)
+    }
+  },
+  copy() {
+    wx.setClipboardData({
+      data: this.data.wenan,
     })
   }
 })

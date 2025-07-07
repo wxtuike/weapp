@@ -236,3 +236,36 @@
 .t-popup__close .t-icon {
   font-size: 20px !important;
 }
+
+.wenan {
+  display: flex;
+  flex-direction: column;
+  min-height: 100rpx;
+  background-color: #eee;
+  white-space: pre-wrap;
+  padding: 20rpx;
+}
+
+.copy_c {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy {
+  background-color: rgb(182, 198, 250);
+  color: blue;
+  font-size: 12px;
+  width: 100rpx;
+  text-align: center;
+  border-radius: 50rpx;
+}
+
+.btn {
+  text-align: center;
+  width: 200rpx;
+  border-radius: 50rpx;
+  background: linear-gradient(135deg, #007bff, #78b2fd);
+  padding: 10rpx 50rpx;
+  color: #fff;
+  margin: 30rpx auto 0 auto;
+}
