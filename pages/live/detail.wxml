@@ -73,7 +73,9 @@
     </view>
   </view>
   <view class="con" wx:else>
-    <view class="share start" bind:tap="share">分享预约海报</view>
+    <view class="share" bind:tap="share">分享海报</view>
+    <view class="go" bind:tap="buy" wx:if="{{is_bind_wxtk != 1}}">立即预约</view>
+    <view class="go" bind:tap="notice" wx:else>立即预约</view>
   </view>
 </view>
 <button id="btnMobile" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber" style="display: none;"></button>
