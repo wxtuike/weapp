@@ -54,11 +54,23 @@ Page({
         id: data.goods_info.goods_id,
         gid: data.goods_info.id,
         goods_info: data.goods_info,
-        store_product: data.store_product,
+        // store_product: data.store_product,
         loading: false,
         is_bind_wxtk: data.is_bind_wxtk
       })
       console.log(this.data)
+      // this.createCanvas(data)
+      // this.createShareImg()
+    }
+    let res1 = await api.get('/index/goods/share', {
+      id
+    })
+    const data1 = res1.data
+    if (res1.code == 200) {
+      this.setData({
+        store_product: data1.store_product
+      })
+      data.store_product = data1.store_product
       this.createCanvas(data)
       this.createShareImg()
     }
