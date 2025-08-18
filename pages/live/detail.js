@@ -138,12 +138,7 @@ Page({
     wx.reserveChannelsLive({
       "noticeId": live.live_id,
       "promoterShareLink": live.promoter_share_link,
-      success(res) {
-        wx.showToast({
-          title: '预约成功！',
-          duration: 1000
-        })
-      },
+      success(res) {},
       fail(res) {
         wx.showToast({
           title: '预约失败，请与客服联系！',
