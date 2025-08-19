@@ -30,6 +30,7 @@ Page({
     wa_index: 0,
     wa: '',
     start: false,
+    coupons: []
   },
 
   /**
@@ -73,6 +74,14 @@ Page({
       data.store_product = data1.store_product
       this.createCanvas(data)
       this.createShareImg()
+    }
+
+    let res2 = await api.get('/index/goods/coupon', {id})
+    const data2 = res2.data
+    if (res2.code == 200) {
+      this.setData({
+        coupons: data2
+      })
     }
   },
   /**

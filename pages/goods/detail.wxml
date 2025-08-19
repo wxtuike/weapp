@@ -31,6 +31,11 @@
         <text class="txt">商品销售者为购物链接所属店铺经营者，非本平台</text>
       </view>
     </view>
+    <view style="padding: 20rpx 20rpx 0 20rpx;" wx:if="{{coupons.length > 0}}">
+      <view style="margin-bottom: 10rpx;" wx:key="index" wx:for="{{coupons}}" data-index="{{index}}">
+        <store-coupon appid="{{item.shop_appid}}" coupon-id="{{item.coupon_id}}" promoter-share-link="{{item.promoter_share_link}}" />
+      </view>
+    </view>
     <view class="tips">
       <view>推广文案(DeepSeek)</view>
       <view class="wenan">
