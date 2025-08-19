@@ -47,6 +47,7 @@ export default class Calendar extends SuperComponent {
             month: number;
         };
         updateActionButton(value: Date): void;
+        updateCurrentMonth(newValue?: any): void;
         calcCurrentMonth(newValue?: any): void;
         calcMonths(): void;
         close(trigger: any): void;

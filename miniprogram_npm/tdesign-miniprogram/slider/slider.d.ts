@@ -48,6 +48,7 @@ export default class Slider extends SuperComponent {
     renderLine(val: any): void;
     triggerValue(value?: SliderValue): void;
     handlePropsChange(newValue: SliderValue): void;
+    valueToPosition(value: number): number;
     handleMark(marks: any): void;
     setSingleBarWidth(value: number): void;
     init(): Promise<void>;

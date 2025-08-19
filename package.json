@@ -10,6 +10,6 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "tdesign-miniprogram": "^1.9.1"
+    "tdesign-miniprogram": "^1.10.0"
   }
 }

@@ -11,6 +11,11 @@ export declare const classNames: (...args: any[]) => string;
 export declare const styles: (styleObj: any) => string;
 export declare const getAnimationFrame: (context: any, cb: Function) => any;
 export declare const getRect: (context: any, selector: string, needAll?: boolean) => Promise<any>;
+interface TreeNode {
+    children?: TreeNode[];
+    [key: string]: any;
+}
+export declare const getTreeDepth: (tree: TreeNode[], key?: string) => any;
 export declare const isIOS: () => boolean;
 export declare const addUnit: (value?: string | number) => string | undefined;
 export declare const getCharacterLength: (type: string, char: string | number, max?: number) => {

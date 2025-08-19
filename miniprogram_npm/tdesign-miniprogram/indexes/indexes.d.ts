@@ -2,6 +2,10 @@ import { RelationsOptions, SuperComponent } from '../common/src/index';
 export default class Indexes extends SuperComponent {
     externalClasses: string[];
     properties: import("./type").TdIndexesProps;
+    controlledProps: {
+        key: string;
+        event: string;
+    }[];
     data: {
         prefix: string;
         classPrefix: string;
@@ -16,10 +20,10 @@ export default class Indexes extends SuperComponent {
     timer: any;
     groupTop: any[];
     sidebar: any;
-    currentTouchAnchor: any;
     observers: {
         indexList(v: any): void;
         height(v: any): void;
+        current(current: string | number): void;
     };
     lifetimes: {
         ready(): void;
@@ -31,7 +35,7 @@ export default class Indexes extends SuperComponent {
         getAnchorsRect(): Promise<any[]>;
         getSidebarRect(): void;
         toggleTips(flag: boolean): void;
-        setAnchorByIndex(index: any): void;
+        setAnchorByCurrent(current: string | number, source: 'init' | 'click' | 'touch' | 'update'): void;
         onClick(e: any): void;
         onTouchMove(e: any): void;
         onTouchCancel(): void;

@@ -22,6 +22,10 @@ export default class ImageViewer extends SuperComponent {
             type: NumberConstructor;
             value?: Number;
         };
+        lazy?: {
+            type: BooleanConstructor;
+            value?: boolean;
+        };
         showIndex?: {
             type: BooleanConstructor;
             value?: boolean;
@@ -43,6 +47,7 @@ export default class ImageViewer extends SuperComponent {
         prefix: string;
         classPrefix: string;
         currentSwiperIndex: number;
+        loadedImageIndexes: any[];
         windowHeight: number;
         windowWidth: number;
         swiperStyle: {};

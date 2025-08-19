@@ -1,3 +1,4 @@
+/// <reference types="miniprogram-api-typings" />
 import { SuperComponent } from '../common/src/index';
 import { UploadFile } from './type';
 export default class Upload extends SuperComponent {
@@ -32,11 +33,10 @@ export default class Upload extends SuperComponent {
     lifetimes: {
         ready(): void;
     };
-    onProofTap(e: any): void;
     handleLimit(customFiles: UploadFile[], max: number): void;
     triggerSuccessEvent(files: any): void;
     triggerFailEvent(err: any): void;
-    onFileClick(e: any): void;
+    onFileClick(e: WechatMiniprogram.BaseEvent): void;
     getFileType(mediaType: string[], tempFilePath: string, fileType?: string): string;
     getRandFileName(filePath: any): string;
     onDelete(e: any): void;
@@ -46,6 +46,10 @@ export default class Upload extends SuperComponent {
     initDragList(): void;
     initDragBaseData(): void;
     methods: {
+        getPreviewMediaSources(): WechatMiniprogram.MediaSource[];
+        onPreview(e: WechatMiniprogram.BaseEvent): void;
+        onPreviewImage(e: WechatMiniprogram.BaseEvent): void;
+        onPreviewMedia(e: WechatMiniprogram.BaseEvent): void;
         uploadFiles(files: UploadFile[]): Promise<unknown>;
         startUpload(files: UploadFile[]): any;
         onAddTap(): void;

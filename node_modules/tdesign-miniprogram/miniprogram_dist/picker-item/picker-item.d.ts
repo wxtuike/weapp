@@ -26,10 +26,12 @@ export default class PickerItem extends SuperComponent {
         created(): void;
     };
     methods: {
+        onClickItem(event: WechatMiniprogram.TouchEvent): void;
         onTouchStart(event: any): void;
         onTouchMove(event: any): void;
         onTouchEnd(event: any): void;
         formatOption(options: PickerItemOption[], columnIndex: number, format: any): any[];
+        updateSelected(index: number, trigger: boolean): void;
         update(): void;
         getCount(): any;
     };

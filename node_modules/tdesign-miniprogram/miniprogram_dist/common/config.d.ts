@@ -1,3 +1,4 @@
+/// <reference types="typing" />
 declare const _default: {
     prefix: string;
 };

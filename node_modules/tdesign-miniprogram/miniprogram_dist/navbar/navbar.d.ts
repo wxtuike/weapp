@@ -30,7 +30,7 @@ export default class Navbar extends SuperComponent {
         getMenuRect(): void;
         onMenuButtonBoundingClientRectWeightChange(): void;
         offMenuButtonBoundingClientRectWeightChange(): void;
-        queryElements(capsuleRect: any): void;
+        queryElements(capsuleRect: WechatMiniprogram.OnMenuButtonBoundingClientRectWeightChangeListenerResult): void;
         goBack(): void;
     };
 }
