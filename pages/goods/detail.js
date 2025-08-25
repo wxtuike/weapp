@@ -15,7 +15,9 @@ Page({
     bg: "https://store.mp.video.tencent-cloud.com/161/20304/snscosdownload/SH/reserved/68178bfb0008bde22176bab2ebca1715000000a100004f50",
     id: '',
     goods_info: {},
-    store_product: {},
+    store_product: {
+      product_promotion_link : ''
+    },
     is_bind_wxtk: 0,
     triggered: false,
     canvas_data: {},

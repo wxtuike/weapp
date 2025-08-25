@@ -69,13 +69,18 @@
           <view>分享每单赚</view>
         </view>
         <view class="buy1" wx:if="{{is_bind_wxtk == 1}}">
-          <view>¥{{goods_info.commission}}</view>
-          <view>购买每单返</view>
-          <view class="buy-store">
-            <store-product class="store-product" appid="{{store_product.shop_appid}}" product-id="{{store_product.product_id}}" product-promotion-link="{{store_product.product_promotion_link}}" custom-content="{{true}}">
-              <view>立即购买</view>
-            </store-product>
-          </view>
+          <block wx:if="{{store_product.product_promotion_link !== ''}}">
+            <view>¥{{goods_info.commission}}</view>
+            <view>购买每单返</view>
+            <view class="buy-store">
+              <store-product class="store-product" appid="{{store_product.shop_appid}}" product-id="{{store_product.product_id}}" product-promotion-link="{{store_product.product_promotion_link}}" custom-content="{{true}}">
+                <view>立即购买</view>
+              </store-product>
+            </view>
+          </block>
+          <block wx:else>
+            <view style="line-height: 60rpx;">加载中...</view>
+          </block>
         </view>
         <view class="buy" wx:else bind:tap="buy">
           <view>{{goods_info.commission}}</view>
